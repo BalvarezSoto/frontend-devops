@@ -58,7 +58,7 @@ describe('App Component', () => {
 
     // Wait for the UI update with errors
     await waitFor(() => {
-      expect(screen.getByText('Error')).toBeInTheDocument();
+      expect(screen.getAllByText('Error')).toHaveLength(2);
       expect(screen.getByText(/Error connecting to backend:/)).toBeInTheDocument();
       expect(screen.getByText(/Error fetching data:/)).toBeInTheDocument();
     });
