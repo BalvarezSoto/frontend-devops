@@ -7,5 +7,14 @@ export default defineConfig({
   server: {
     host: true, // Listen on all network interfaces (needed inside Docker)
     port: 3000,
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/setupTests.js',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov'],
+    }
   }
 })
